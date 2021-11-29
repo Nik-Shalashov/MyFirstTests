@@ -22,6 +22,9 @@ class EmailValidator : TextWatcher {
         /**
          * Паттерн для сравнения.
          */
+
+        private const val example = "example"
+
         private val EMAIL_PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
@@ -35,5 +38,12 @@ class EmailValidator : TextWatcher {
         fun isValidEmail(email: CharSequence?): Boolean {
             return email != null && EMAIL_PATTERN.matcher(email).matches()
         }
+
+        fun isEqualsEmail(): String = "example@mail.com"
+
+        fun isArrayEmailsEquals(): Array<String> = arrayOf("num1@mail.com", "num2@mail.com", "num3@mail.com")
+
+        fun isSameTest1(): String = example
+        fun isSameTest2(): String = example
     }
 }
